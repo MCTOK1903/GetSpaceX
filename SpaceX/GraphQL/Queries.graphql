@@ -1,0 +1,10 @@
+
+query getLaunches($limit: Int) {
+  launches (limit: $limit){
+    id
+    details
+    links {
+      mission_patch
+    }
+  }
+}
