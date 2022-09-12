@@ -1,8 +1,9 @@
 
-query getLaunches($limit: Int) {
-  launches (limit: $limit){
+query getLaunches($offset: Int, $limit: Int) {
+  launches (offset: $offset,limit: $limit){
     id
     details
+    mission_name
     links {
       mission_patch
     }

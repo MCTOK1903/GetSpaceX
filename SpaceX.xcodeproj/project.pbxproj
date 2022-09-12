@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00C53ECE28CF4963002433E1 /* FeedCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C53ECD28CF4963002433E1 /* FeedCellViewModel.swift */; };
+		00C53ED128CF4BA1002433E1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 00C53ED028CF4BA1002433E1 /* Kingfisher */; };
+		00C53ED328CF6E87002433E1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C53ED228CF6E86002433E1 /* AppCoordinator.swift */; };
 		00D686CF28CB4AD500F18EC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D686CE28CB4AD500F18EC7 /* AppDelegate.swift */; };
 		00D686D128CB4AD500F18EC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D686D028CB4AD500F18EC7 /* SceneDelegate.swift */; };
-		00D686D328CB4AD500F18EC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D686D228CB4AD500F18EC7 /* ViewController.swift */; };
 		00D686D828CB4AD900F18EC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00D686D728CB4AD900F18EC7 /* Assets.xcassets */; };
 		00D686DB28CB4AD900F18EC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D686D928CB4AD900F18EC7 /* LaunchScreen.storyboard */; };
 		00D686E928CB54F000F18EC7 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 00D686E828CB54F000F18EC7 /* Apollo */; };
@@ -20,13 +22,23 @@
 		00D6870128CE195D00F18EC7 /* ApolloPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D6870028CE195D00F18EC7 /* ApolloPublisher.swift */; };
 		00D6870328CE1A3700F18EC7 /* ApolloSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D6870228CE1A3700F18EC7 /* ApolloSubscription.swift */; };
 		00D6870628CE1C1A00F18EC7 /* ApolloClient+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D6870528CE1C1A00F18EC7 /* ApolloClient+Extension.swift */; };
+		00EE21E028CE5BC500123282 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE21DF28CE5BC500123282 /* FeedViewModel.swift */; };
+		00EE21E328CE5F1F00123282 /* LaunchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE21E228CE5F1F00123282 /* LaunchModel.swift */; };
+		00EE21E628CE661A00123282 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE21E528CE661A00123282 /* FeedViewController.swift */; };
+		00EE21EA28CE675100123282 /* FeedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE21E928CE675100123282 /* FeedListView.swift */; };
+		00EE21ED28CE69F800123282 /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE21EC28CE69F800123282 /* FeedCollectionViewCell.swift */; };
+		00EE21F028CE6AC600123282 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 00EE21EF28CE6AC600123282 /* SnapKit */; };
+		00EE21F228CE88DE00123282 /* Reuseable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE21F128CE88DE00123282 /* Reuseable+Extension.swift */; };
+		00EE21F428CE88F200123282 /* CollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE21F328CE88F200123282 /* CollectionViewCell+Extension.swift */; };
+		00EE21F628CE8C3B00123282 /* FeedViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE21F528CE8C3B00123282 /* FeedViewBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00C53ECD28CF4963002433E1 /* FeedCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCellViewModel.swift; sourceTree = "<group>"; };
+		00C53ED228CF6E86002433E1 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		00D686CB28CB4AD500F18EC7 /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D686CE28CB4AD500F18EC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00D686D028CB4AD500F18EC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		00D686D228CB4AD500F18EC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		00D686D728CB4AD900F18EC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00D686DA28CB4AD900F18EC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00D686DC28CB4AD900F18EC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,6 +49,14 @@
 		00D6870028CE195D00F18EC7 /* ApolloPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloPublisher.swift; sourceTree = "<group>"; };
 		00D6870228CE1A3700F18EC7 /* ApolloSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloSubscription.swift; sourceTree = "<group>"; };
 		00D6870528CE1C1A00F18EC7 /* ApolloClient+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApolloClient+Extension.swift"; sourceTree = "<group>"; };
+		00EE21DF28CE5BC500123282 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		00EE21E228CE5F1F00123282 /* LaunchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchModel.swift; sourceTree = "<group>"; };
+		00EE21E528CE661A00123282 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		00EE21E928CE675100123282 /* FeedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListView.swift; sourceTree = "<group>"; };
+		00EE21EC28CE69F800123282 /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
+		00EE21F128CE88DE00123282 /* Reuseable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reuseable+Extension.swift"; sourceTree = "<group>"; };
+		00EE21F328CE88F200123282 /* CollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
+		00EE21F528CE8C3B00123282 /* FeedViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,13 +64,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00C53ED128CF4BA1002433E1 /* Kingfisher in Frameworks */,
 				00D686E928CB54F000F18EC7 /* Apollo in Frameworks */,
+				00EE21F028CE6AC600123282 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00C53ECB28CF494D002433E1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				00C53ECD28CF4963002433E1 /* FeedCellViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		00C53ECC28CF4952002433E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				00EE21EC28CE69F800123282 /* FeedCollectionViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		00D686C228CB4AD500F18EC7 = {
 			isa = PBXGroup;
 			children = (
@@ -77,7 +115,6 @@
 				00D686E428CB4C0000F18EC7 /* Coordinator */,
 				00D686E328CB4BF900F18EC7 /* Screens */,
 				00D686E228CB4BF400F18EC7 /* App */,
-				00D686D228CB4AD500F18EC7 /* ViewController.swift */,
 				00D686DC28CB4AD900F18EC7 /* Info.plist */,
 			);
 			path = SpaceX;
@@ -95,6 +132,7 @@
 		00D686E328CB4BF900F18EC7 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				00EE21DD28CE5BAE00123282 /* Feed */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -102,6 +140,7 @@
 		00D686E428CB4C0000F18EC7 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				00C53ED228CF6E86002433E1 /* AppCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -109,6 +148,7 @@
 		00D686E528CB4C0B00F18EC7 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				00EE21E128CE5F0200123282 /* Model */,
 				00D686FF28CE193700F18EC7 /* ApolloCombine */,
 				00D686FD28CB600C00F18EC7 /* HttpClient.swift */,
 			);
@@ -147,8 +187,71 @@
 			isa = PBXGroup;
 			children = (
 				00D6870528CE1C1A00F18EC7 /* ApolloClient+Extension.swift */,
+				00EE21F128CE88DE00123282 /* Reuseable+Extension.swift */,
+				00EE21F328CE88F200123282 /* CollectionViewCell+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		00EE21DD28CE5BAE00123282 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				00EE21E728CE66E200123282 /* Builder */,
+				00EE21E428CE660000123282 /* View */,
+				00EE21DE28CE5BBA00123282 /* ViewModel */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		00EE21DE28CE5BBA00123282 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				00EE21DF28CE5BC500123282 /* FeedViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		00EE21E128CE5F0200123282 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				00EE21E228CE5F1F00123282 /* LaunchModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		00EE21E428CE660000123282 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				00EE21EB28CE69CC00123282 /* Cell */,
+				00EE21E828CE674000123282 /* CustomView */,
+				00EE21E528CE661A00123282 /* FeedViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		00EE21E728CE66E200123282 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				00EE21F528CE8C3B00123282 /* FeedViewBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		00EE21E828CE674000123282 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				00EE21E928CE675100123282 /* FeedListView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		00EE21EB28CE69CC00123282 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				00C53ECC28CF4952002433E1 /* View */,
+				00C53ECB28CF494D002433E1 /* ViewModel */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +273,8 @@
 			name = SpaceX;
 			packageProductDependencies = (
 				00D686E828CB54F000F18EC7 /* Apollo */,
+				00EE21EF28CE6AC600123282 /* SnapKit */,
+				00C53ED028CF4BA1002433E1 /* Kingfisher */,
 			);
 			productName = SpaceX;
 			productReference = 00D686CB28CB4AD500F18EC7 /* SpaceX.app */;
@@ -201,6 +306,8 @@
 			mainGroup = 00D686C228CB4AD500F18EC7;
 			packageReferences = (
 				00D686E728CB54F000F18EC7 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				00EE21EE28CE6AC500123282 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				00C53ECF28CF4BA0002433E1 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 00D686CC28CB4AD500F18EC7 /* Products */;
 			projectDirPath = "";
@@ -251,14 +358,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00EE21F428CE88F200123282 /* CollectionViewCell+Extension.swift in Sources */,
+				00EE21EA28CE675100123282 /* FeedListView.swift in Sources */,
+				00C53ED328CF6E87002433E1 /* AppCoordinator.swift in Sources */,
+				00C53ECE28CF4963002433E1 /* FeedCellViewModel.swift in Sources */,
 				00D686FE28CB600C00F18EC7 /* HttpClient.swift in Sources */,
-				00D686D328CB4AD500F18EC7 /* ViewController.swift in Sources */,
 				00D686CF28CB4AD500F18EC7 /* AppDelegate.swift in Sources */,
+				00EE21F228CE88DE00123282 /* Reuseable+Extension.swift in Sources */,
+				00EE21F628CE8C3B00123282 /* FeedViewBuilder.swift in Sources */,
 				00D6870128CE195D00F18EC7 /* ApolloPublisher.swift in Sources */,
+				00EE21E328CE5F1F00123282 /* LaunchModel.swift in Sources */,
 				00D686FC28CB5F9C00F18EC7 /* API.swift in Sources */,
 				00D6870628CE1C1A00F18EC7 /* ApolloClient+Extension.swift in Sources */,
+				00EE21E628CE661A00123282 /* FeedViewController.swift in Sources */,
 				00D6870328CE1A3700F18EC7 /* ApolloSubscription.swift in Sources */,
+				00EE21ED28CE69F800123282 /* FeedCollectionViewCell.swift in Sources */,
 				00D686D128CB4AD500F18EC7 /* SceneDelegate.swift in Sources */,
+				00EE21E028CE5BC500123282 /* FeedViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +584,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		00C53ECF28CF4BA0002433E1 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		00D686E728CB54F000F18EC7 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
@@ -476,13 +600,31 @@
 				minimumVersion = 0.9.5;
 			};
 		};
+		00EE21EE28CE6AC500123282 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		00C53ED028CF4BA1002433E1 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00C53ECF28CF4BA0002433E1 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		00D686E828CB54F000F18EC7 /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 00D686E728CB54F000F18EC7 /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = Apollo;
+		};
+		00EE21EF28CE6AC600123282 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00EE21EE28CE6AC500123282 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

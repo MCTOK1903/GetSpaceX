@@ -9,15 +9,15 @@ import Foundation
 import Combine
 import Apollo
 
-enum ApolloError: Error {
-    case loading(description: String)
-}
+typealias LaunchesQueryResponseModel = GetLaunchesQuery.Data.Launch
 
 protocol HttpClientProtocol {
     
+    
+    func fetch(offSet: Int) -> AnyPublisher<[LaunchModel], Error>
 }
 
-class HttpClient {
+class HttpClient: HttpClientProtocol {
     
     let apollo: ApolloClient
     
@@ -25,17 +25,15 @@ class HttpClient {
         self.apollo = client
     }
     
-    func fetch() -> AnyPublisher<String, Error> {
-        return apollo.fetchPublisher(query: GetLaunchesQuery())
+    func fetch(offSet: Int) -> AnyPublisher<[LaunchModel], Error> {
+        return apollo.fetchPublisher(query: GetLaunchesQuery(offset: offSet,
+                                                             limit: 20))
             .mapError { error in
                 return error
             }
             .map { response in
-               return response.data?.launches?.description ?? ""
+                return LaunchModel.generateLauncModel(launchs: response.data?.launches?.compactMap({$0}) ?? [])
             }
             .eraseToAnyPublisher()
     }
 }
-
-
-

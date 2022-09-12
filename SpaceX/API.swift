@@ -8,11 +8,12 @@ public final class GetLaunchesQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    query getLaunches($limit: Int) {
-      launches(limit: $limit) {
+    query getLaunches($offset: Int, $limit: Int) {
+      launches(offset: $offset, limit: $limit) {
         __typename
         id
         details
+        mission_name
         links {
           __typename
           mission_patch
@@ -23,14 +24,16 @@ public final class GetLaunchesQuery: GraphQLQuery {
 
   public let operationName: String = "getLaunches"
 
+  public var offset: Int?
   public var limit: Int?
 
-  public init(limit: Int? = nil) {
+  public init(offset: Int? = nil, limit: Int? = nil) {
+    self.offset = offset
     self.limit = limit
   }
 
   public var variables: GraphQLMap? {
-    return ["limit": limit]
+    return ["offset": offset, "limit": limit]
   }
 
   public struct Data: GraphQLSelectionSet {
@@ -38,7 +41,7 @@ public final class GetLaunchesQuery: GraphQLQuery {
 
     public static var selections: [GraphQLSelection] {
       return [
-        GraphQLField("launches", arguments: ["limit": GraphQLVariable("limit")], type: .list(.object(Launch.selections))),
+        GraphQLField("launches", arguments: ["offset": GraphQLVariable("offset"), "limit": GraphQLVariable("limit")], type: .list(.object(Launch.selections))),
       ]
     }
 
@@ -69,6 +72,7 @@ public final class GetLaunchesQuery: GraphQLQuery {
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
           GraphQLField("id", type: .scalar(GraphQLID.self)),
           GraphQLField("details", type: .scalar(String.self)),
+          GraphQLField("mission_name", type: .scalar(String.self)),
           GraphQLField("links", type: .object(Link.selections)),
         ]
       }
@@ -79,8 +83,8 @@ public final class GetLaunchesQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(id: GraphQLID? = nil, details: String? = nil, links: Link? = nil) {
-        self.init(unsafeResultMap: ["__typename": "Launch", "id": id, "details": details, "links": links.flatMap { (value: Link) -> ResultMap in value.resultMap }])
+      public init(id: GraphQLID? = nil, details: String? = nil, missionName: String? = nil, links: Link? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Launch", "id": id, "details": details, "mission_name": missionName, "links": links.flatMap { (value: Link) -> ResultMap in value.resultMap }])
       }
 
       public var __typename: String {
@@ -107,6 +111,15 @@ public final class GetLaunchesQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "details")
+        }
+      }
+
+      public var missionName: String? {
+        get {
+          return resultMap["mission_name"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "mission_name")
         }
       }
 
