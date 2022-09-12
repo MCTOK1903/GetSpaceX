@@ -10,6 +10,10 @@ import Combine
 
 class FeedViewController: UIViewController {
     
+    // MARK: Costant
+    private enum Constant {
+        static let title = "Have a good Day!"
+    }
     
     // MARK: View
     private lazy var contentView = FeedListView()
@@ -17,9 +21,7 @@ class FeedViewController: UIViewController {
     // MARK: Properties
     private let viewModel: FeedViewModel
     private var bindings = Set<AnyCancellable>()
-    private typealias DataSource = UICollectionViewDiffableDataSource< FeedViewModel.Section, LaunchModel>
-    private typealias Snapshot = NSDiffableDataSourceSnapshot<FeedViewModel.Section, LaunchModel>
-    private var dataSource: DataSource?
+    private var feedCollectionDataManager: FeedCollectionDataManager?
     
     // MARK: Init
     init(viewModel: FeedViewModel) {
@@ -34,10 +36,8 @@ class FeedViewController: UIViewController {
     }
     
     // MARK: Lifecycle
-    
     override func loadView() {
         view = contentView
-        contentView.output = viewModel
     }
     
     override func viewDidLoad() {
@@ -49,9 +49,12 @@ class FeedViewController: UIViewController {
         setUpBinding()
         setupView()
     }
-    
+}
+
+// MARK: - Funcs
+extension FeedViewController {
     private func setupView() {
-        title = "Have a good Day!"
+        title = Constant.title
         view.backgroundColor = .systemGray4
     }
     
@@ -64,7 +67,7 @@ class FeedViewController: UIViewController {
         viewModel.$launchs
             .receive(on: RunLoop.main)
             .sink { [weak self] _ in
-                self?.updateSections()
+                self?.feedCollectionDataManager?.updateSections(launchs: self?.viewModel.launchs)
             }
             .store(in: &bindings)
         
@@ -87,34 +90,11 @@ class FeedViewController: UIViewController {
         
     }
     
-    private func updateSections() {
-        var snapshot = Snapshot()
-        snapshot.appendSections([.launch])
-        snapshot.appendItems(viewModel.launchs)
-        dataSource?.apply(snapshot, animatingDifferences: true)
-    }
-    
-    private func showError(_ error: String) {
-        let alertController = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "OK", style: .default) { [unowned self] _ in
-            self.dismiss(animated: true, completion: nil)
-        }
-        alertController.addAction(alertAction)
-        present(alertController, animated: true, completion: nil)
-    }
-}
-
-extension FeedViewController {
     private func configureDataSource() {
-        dataSource = DataSource(
+        feedCollectionDataManager = FeedCollectionDataManager(
             collectionView: contentView.collectionView,
-            cellProvider: { (collectionView, indexPath, launch) -> UICollectionViewCell? in
-                let cell = collectionView.dequeueReusableCell(
-                    withReuseIdentifier: FeedCollectionViewCell.reuseIdentifier,
-                    for: indexPath
-                ) as? FeedCollectionViewCell
-                cell?.configureCell(viewModel: FeedCellViewModel(launch: launch))
-                return cell
-            })
+            output: self.viewModel
+        )
+        feedCollectionDataManager?.configure()
     }
 }

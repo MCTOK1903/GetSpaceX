@@ -8,7 +8,6 @@
 import Foundation
 
 struct LaunchModel: Identifiable, Hashable {
-    
     var id: String?
     var name: String?
     var details: String?

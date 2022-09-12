@@ -7,17 +7,20 @@
 
 import Foundation
 import UIKit
-
-protocol FeedListViewOutput: AnyObject {
-    func checkPagination(lastVisibleItemIndexPath: IndexPath?)
-}
+import SnapKit
 
 final class FeedListView: UIView {
     
+    // MARK: Constant
+    private enum Constant {
+        static let activityIndicationHeight = 50
+    }
+    
+    // MARK: View
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
     lazy var activityIndicationView = UIActivityIndicatorView(style: .medium)
-    weak var output: FeedListViewOutput?
 
+    // MARK: Init
     init() {
         super.init(frame: .zero)
         
@@ -51,19 +54,15 @@ extension FeedListView {
 extension FeedListView {
     
     private func setUpConstraints() {
-        let defaultMargin: CGFloat = 4.0
         
-        NSLayoutConstraint.activate([
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            collectionView.topAnchor.constraint(equalTo: topAnchor, constant: defaultMargin),
-            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            
-            activityIndicationView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            activityIndicationView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            activityIndicationView.heightAnchor.constraint(equalToConstant: 50),
-            activityIndicationView.widthAnchor.constraint(equalToConstant: 50.0)
-        ])
+        collectionView.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalTo(self)
+        }
+        
+        activityIndicationView.snp.makeConstraints { make in
+            make.centerX.centerY.equalTo(self)
+            make.height.width.equalTo(Constant.activityIndicationHeight)
+        }
     }
     
     private func setupSubView() {
@@ -78,6 +77,7 @@ extension FeedListView {
     
     private func createLayout() -> UICollectionViewLayout {
         let fraction: CGFloat = 1 / 2
+        let fractionHeight: CGFloat = 1 / 3.5
         let inset: CGFloat = 5
 
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(fraction),
@@ -89,7 +89,7 @@ extension FeedListView {
                                                      trailing: inset)
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                               heightDimension: .fractionalHeight(1/3.5))
+                                               heightDimension: .fractionalHeight(fractionHeight))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
                                                        subitems: [item])
         
@@ -99,9 +99,6 @@ extension FeedListView {
                                                         bottom: inset,
                                                         trailing: inset)
         
-        section.visibleItemsInvalidationHandler = { [weak self] (visibleItems, _, _) in
-            self?.output?.checkPagination(lastVisibleItemIndexPath: visibleItems.last?.indexPath)
-        }
         return UICollectionViewCompositionalLayout(section: section)
     }
 }

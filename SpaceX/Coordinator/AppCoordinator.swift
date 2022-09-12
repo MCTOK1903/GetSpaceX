@@ -14,7 +14,7 @@ enum Event {
 protocol Coordinator {
     var navigationController: UINavigationController? { get set }
     var parentCoordinator: Coordinator? { get set }
-    func eventOccurred(with type: Event, item: Any)
+    func eventOccurred(with type: Event, item: LaunchModel)
     func start()
 }
 
@@ -29,11 +29,17 @@ class AppCoordinator: Coordinator {
     var children: [Coordinator] = []
     var navigationController: UINavigationController?
     
+    // MARK: Init
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
+    
+    func start() {
+        let vc = FeedViewBuilder.build(coordinator: self)
+        navigationController?.setViewControllers([vc], animated: false)
+    }
 
-    func eventOccurred(with type: Event, item: Any) {
+    func eventOccurred(with type: Event, item: LaunchModel) {
         switch type {
         case .goToDetail:
             break
@@ -42,10 +48,5 @@ class AppCoordinator: Coordinator {
 //            navigationController?.pushViewController(vc,
 //                                                     animated: true)
         }
-    }
-
-    func start() {
-        let vc = FeedViewBuilder.build(coordinator: self)
-        navigationController?.setViewControllers([vc], animated: false)
     }
 }

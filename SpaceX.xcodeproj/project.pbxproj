@@ -10,6 +10,8 @@
 		00C53ECE28CF4963002433E1 /* FeedCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C53ECD28CF4963002433E1 /* FeedCellViewModel.swift */; };
 		00C53ED128CF4BA1002433E1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 00C53ED028CF4BA1002433E1 /* Kingfisher */; };
 		00C53ED328CF6E87002433E1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C53ED228CF6E86002433E1 /* AppCoordinator.swift */; };
+		00C53ED528CF72B2002433E1 /* FeedCollectionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C53ED428CF72B2002433E1 /* FeedCollectionDataManager.swift */; };
+		00C53ED728CF7817002433E1 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C53ED628CF7817002433E1 /* UIViewController+Extension.swift */; };
 		00D686CF28CB4AD500F18EC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D686CE28CB4AD500F18EC7 /* AppDelegate.swift */; };
 		00D686D128CB4AD500F18EC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D686D028CB4AD500F18EC7 /* SceneDelegate.swift */; };
 		00D686D828CB4AD900F18EC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00D686D728CB4AD900F18EC7 /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 /* Begin PBXFileReference section */
 		00C53ECD28CF4963002433E1 /* FeedCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCellViewModel.swift; sourceTree = "<group>"; };
 		00C53ED228CF6E86002433E1 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		00C53ED428CF72B2002433E1 /* FeedCollectionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionDataManager.swift; sourceTree = "<group>"; };
+		00C53ED628CF7817002433E1 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		00D686CB28CB4AD500F18EC7 /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D686CE28CB4AD500F18EC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00D686D028CB4AD500F18EC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +93,22 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		00C53ED828CF7B78002433E1 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				00C53ED428CF72B2002433E1 /* FeedCollectionDataManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		00C53ED928CF7B84002433E1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				00EE21E528CE661A00123282 /* FeedViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		00D686C228CB4AD500F18EC7 = {
 			isa = PBXGroup;
 			children = (
@@ -115,7 +135,6 @@
 				00D686E428CB4C0000F18EC7 /* Coordinator */,
 				00D686E328CB4BF900F18EC7 /* Screens */,
 				00D686E228CB4BF400F18EC7 /* App */,
-				00D686DC28CB4AD900F18EC7 /* Info.plist */,
 			);
 			path = SpaceX;
 			sourceTree = "<group>";
@@ -123,6 +142,7 @@
 		00D686E228CB4BF400F18EC7 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				00D686DC28CB4AD900F18EC7 /* Info.plist */,
 				00D686CE28CB4AD500F18EC7 /* AppDelegate.swift */,
 				00D686D028CB4AD500F18EC7 /* SceneDelegate.swift */,
 			);
@@ -189,6 +209,7 @@
 				00D6870528CE1C1A00F18EC7 /* ApolloClient+Extension.swift */,
 				00EE21F128CE88DE00123282 /* Reuseable+Extension.swift */,
 				00EE21F328CE88F200123282 /* CollectionViewCell+Extension.swift */,
+				00C53ED628CF7817002433E1 /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -222,9 +243,10 @@
 		00EE21E428CE660000123282 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				00C53ED928CF7B84002433E1 /* ViewController */,
+				00C53ED828CF7B78002433E1 /* Manager */,
 				00EE21EB28CE69CC00123282 /* Cell */,
 				00EE21E828CE674000123282 /* CustomView */,
-				00EE21E528CE661A00123282 /* FeedViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -365,6 +387,8 @@
 				00D686FE28CB600C00F18EC7 /* HttpClient.swift in Sources */,
 				00D686CF28CB4AD500F18EC7 /* AppDelegate.swift in Sources */,
 				00EE21F228CE88DE00123282 /* Reuseable+Extension.swift in Sources */,
+				00C53ED528CF72B2002433E1 /* FeedCollectionDataManager.swift in Sources */,
+				00C53ED728CF7817002433E1 /* UIViewController+Extension.swift in Sources */,
 				00EE21F628CE8C3B00123282 /* FeedViewBuilder.swift in Sources */,
 				00D6870128CE195D00F18EC7 /* ApolloPublisher.swift in Sources */,
 				00EE21E328CE5F1F00123282 /* LaunchModel.swift in Sources */,
@@ -515,7 +539,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D4T62J4499;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SpaceX/Info.plist;
+				INFOPLIST_FILE = SpaceX/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -542,7 +566,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D4T62J4499;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SpaceX/Info.plist;
+				INFOPLIST_FILE = SpaceX/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

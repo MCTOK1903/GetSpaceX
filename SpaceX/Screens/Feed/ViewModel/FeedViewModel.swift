@@ -16,10 +16,9 @@ enum FeedViewModelState: Equatable {
 
 final class FeedViewModel: Coordinating {
     
-    
     // MARK: Properties
     private let httpClient: HttpClientProtocol
-    private var offset: Int = 0
+    private var offset: Int = .zero
     private var bindings = Set<AnyCancellable>()
     private var isPaginating = false
     @Published private(set) var launchs: [LaunchModel] = []
@@ -37,13 +36,15 @@ final class FeedViewModel: Coordinating {
     }
 }
 
-// MARK: - Funcs
+// MARK: - Public Func
 extension FeedViewModel {
-    
     func viewDidLoad() {
         getLaunches()
     }
-    
+}
+
+// MARK: - Private Funcs
+extension FeedViewModel {
     private func getLaunches() {
         httpClient.fetch(offSet: self.offset)
             .sink { [weak self] completion in
@@ -61,14 +62,19 @@ extension FeedViewModel {
     }
 }
 
-extension FeedViewModel: FeedListViewOutput {
-    func checkPagination(lastVisibleItemIndexPath: IndexPath?) {
-        if lastVisibleItemIndexPath?.item == (launchs.count - 1) {
-            if !isPaginating {
-                self.offset += launchs.count
-                getLaunches()
-                self.isPaginating = true
-            }
+// MARK: FeedCollectionDataManagerOutput
+extension FeedViewModel: FeedCollectionDataManagerOutput {
+    func onDidSelect(indexPath: IndexPath) {
+        coordinator?.eventOccurred(with: .goToDetail,
+                                   item: self.launchs[indexPath.item])
+    }
+    
+    func onWillDisplay(indexPath: IndexPath) {
+        if indexPath.item == (launchs.count - 1)
+            && !isPaginating {
+            self.offset += launchs.count
+            getLaunches()
+            self.isPaginating = true
         }
     }
 }
