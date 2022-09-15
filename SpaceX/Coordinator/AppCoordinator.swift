@@ -24,29 +24,27 @@ protocol Coordinating {
 
 class AppCoordinator: Coordinator {
     
+    private enum Constants {
+        static let baseURL: String = "https://api.spacex.land/graphql/"
+    }
+    
     // MARK: Properties
     var parentCoordinator: Coordinator?
     var children: [Coordinator] = []
     var navigationController: UINavigationController?
     
-    // MARK: Init
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-    }
-    
+    // MARK: Funcs
     func start() {
-        let vc = FeedViewBuilder.build(coordinator: self)
+        guard let url = URL(string: Constants.baseURL) else { return }
+        let vc = FeedViewBuilder.build(coordinator: self, url: url)
         navigationController?.setViewControllers([vc], animated: false)
     }
 
     func eventOccurred(with type: Event, item: LaunchModel) {
         switch type {
         case .goToDetail:
-            break
-//            let vc = ItemDetailViewBuilder.build(coordinator: self,
-//                                                 item: item)
-//            navigationController?.pushViewController(vc,
-//                                                     animated: true)
+            navigationController?.pushViewController(LaunchDetailBuilder.build(launch: item),
+                                                     animated: true)
         }
     }
 }

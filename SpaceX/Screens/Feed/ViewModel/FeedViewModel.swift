@@ -8,6 +8,10 @@
 import Foundation
 import Combine
 
+enum ListViewModelError: Error, Equatable {
+    case launchFetch
+}
+
 enum FeedViewModelState: Equatable {
     case loading
     case finishedLoading
@@ -16,11 +20,16 @@ enum FeedViewModelState: Equatable {
 
 final class FeedViewModel: Coordinating {
     
+    // MARK: Constant
+    private enum Constant {
+        static let LastItemCountofStartPagination = 1
+    }
+    
     // MARK: Properties
     private let httpClient: HttpClientProtocol
-    private var offset: Int = .zero
     private var bindings = Set<AnyCancellable>()
     private var isPaginating = false
+    var offset: Int = .zero
     @Published private(set) var launchs: [LaunchModel] = []
     @Published private(set) var state: FeedViewModelState = .loading
     
@@ -41,18 +50,15 @@ extension FeedViewModel {
     func viewDidLoad() {
         getLaunches()
     }
-}
-
-// MARK: - Private Funcs
-extension FeedViewModel {
-    private func getLaunches() {
+    
+    func getLaunches() {
         httpClient.fetch(offSet: self.offset)
             .sink { [weak self] completion in
                 switch completion {
                 case .finished:
                     self?.state = .finishedLoading
-                case .failure(let error):
-                    self?.state = .error(error.localizedDescription)
+                case .failure:
+                    self?.state = .error(ListViewModelError.launchFetch.localizedDescription)
                 }
             } receiveValue: { [weak self] launchs in
                 self?.launchs += launchs
@@ -70,7 +76,7 @@ extension FeedViewModel: FeedCollectionDataManagerOutput {
     }
     
     func onWillDisplay(indexPath: IndexPath) {
-        if indexPath.item == (launchs.count - 1)
+        if indexPath.item == (launchs.count - Constant.LastItemCountofStartPagination)
             && !isPaginating {
             self.offset += launchs.count
             getLaunches()

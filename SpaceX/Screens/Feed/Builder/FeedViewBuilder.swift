@@ -10,8 +10,8 @@ import Apollo
 import UIKit
 
 enum FeedViewBuilder {
-    static func build(coordinator: Coordinator) -> UIViewController {
-        let httpClient = HttpClient(client: ApolloClient(url: URL(string: "https://api.spacex.land/graphql/")!))
+    static func build(coordinator: Coordinator, url: URL) -> UIViewController {
+        let httpClient = HttpClient(client: ApolloClient(url: url))
         let viewModel = FeedViewModel(httpClient: httpClient,
                                       coordinator: coordinator)
         let vc = FeedViewController(viewModel: viewModel)
