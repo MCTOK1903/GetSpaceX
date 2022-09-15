@@ -10,10 +10,6 @@ import Apollo
 import Combine
 @testable import SpaceX
 
-enum MockError: Error {
-    case error
-}
-
 class FeedViewModelTest: XCTestCase {
     
     private var viewModel: FeedViewModel!
@@ -42,16 +38,19 @@ class FeedViewModelTest: XCTestCase {
     func test_getLaunch_ShouldCallService() {
         //given
         viewModel.getLaunches()
+        
         //then
         XCTAssertEqual(mockClient.getCallCounts, 1)
     }
     
-    func test_willDisplay_ShouldPagination() {
+    func test_willDisplay_ShouldStartPagination() {
         //given
         mockClient.result = .success(LaunchModel.generateMockLauncModel())
+        
         //when
         viewModel.getLaunches()
         viewModel.onWillDisplay(indexPath: IndexPath(item: 0, section: 0))
+        
         //then
         XCTAssertEqual(mockClient.getCallCounts, 2)
         XCTAssertEqual(viewModel.offset, 1)
@@ -60,9 +59,11 @@ class FeedViewModelTest: XCTestCase {
     func test_DidSelect_ShouldGoToDetail() {
         //given
         mockClient.result = .success(LaunchModel.generateMockLauncModel())
+        
         //when
         viewModel.getLaunches()
         viewModel.onDidSelect(indexPath: IndexPath(item: 0, section: 0))
+        
         //then
         XCTAssertEqual(mockCoordinator.isDetailOcuorred, true)
     }
@@ -102,5 +103,4 @@ class FeedViewModelTest: XCTestCase {
             .sink { XCTAssertEqual($0, .error(ListViewModelError.launchFetch.localizedDescription))}
             .store(in: &cancellables)
     }
-
 }
