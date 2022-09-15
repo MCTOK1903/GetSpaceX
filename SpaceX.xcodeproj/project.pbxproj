@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0011B73C28D33E34007DB26A /* MockCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011B73B28D33E33007DB26A /* MockCoordinator.swift */; };
+		0011B74028D3476E007DB26A /* LaunchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011B73F28D3476E007DB26A /* LaunchDetailViewController.swift */; };
+		0011B74328D3487A007DB26A /* LaunchDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011B74228D3487A007DB26A /* LaunchDetailViewModel.swift */; };
+		0011B74728D3489E007DB26A /* LaunchDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011B74628D3489E007DB26A /* LaunchDetailBuilder.swift */; };
+		0011B74928D34EC1007DB26A /* MockError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011B74828D34EC1007DB26A /* MockError.swift */; };
 		00C53ECE28CF4963002433E1 /* FeedCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C53ECD28CF4963002433E1 /* FeedCellViewModel.swift */; };
 		00C53ED128CF4BA1002433E1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 00C53ED028CF4BA1002433E1 /* Kingfisher */; };
 		00C53ED328CF6E87002433E1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C53ED228CF6E86002433E1 /* AppCoordinator.swift */; };
 		00C53ED528CF72B2002433E1 /* FeedCollectionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C53ED428CF72B2002433E1 /* FeedCollectionDataManager.swift */; };
 		00C53ED728CF7817002433E1 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C53ED628CF7817002433E1 /* UIViewController+Extension.swift */; };
+		00C53EE128CFAA80002433E1 /* FeedViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C53EE028CFAA80002433E1 /* FeedViewModelTest.swift */; };
+		00C53EEA28CFAEB6002433E1 /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C53EE928CFAEB6002433E1 /* MockService.swift */; };
 		00D686CF28CB4AD500F18EC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D686CE28CB4AD500F18EC7 /* AppDelegate.swift */; };
 		00D686D128CB4AD500F18EC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D686D028CB4AD500F18EC7 /* SceneDelegate.swift */; };
 		00D686D828CB4AD900F18EC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00D686D728CB4AD900F18EC7 /* Assets.xcassets */; };
@@ -35,11 +42,29 @@
 		00EE21F628CE8C3B00123282 /* FeedViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE21F528CE8C3B00123282 /* FeedViewBuilder.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		00C53EE228CFAA80002433E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00D686C328CB4AD500F18EC7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00D686CA28CB4AD500F18EC7;
+			remoteInfo = SpaceX;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		0011B73B28D33E33007DB26A /* MockCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoordinator.swift; sourceTree = "<group>"; };
+		0011B73F28D3476E007DB26A /* LaunchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailViewController.swift; sourceTree = "<group>"; };
+		0011B74228D3487A007DB26A /* LaunchDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailViewModel.swift; sourceTree = "<group>"; };
+		0011B74628D3489E007DB26A /* LaunchDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailBuilder.swift; sourceTree = "<group>"; };
+		0011B74828D34EC1007DB26A /* MockError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockError.swift; sourceTree = "<group>"; };
 		00C53ECD28CF4963002433E1 /* FeedCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCellViewModel.swift; sourceTree = "<group>"; };
 		00C53ED228CF6E86002433E1 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		00C53ED428CF72B2002433E1 /* FeedCollectionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionDataManager.swift; sourceTree = "<group>"; };
 		00C53ED628CF7817002433E1 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		00C53EDE28CFAA80002433E1 /* SpaceXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00C53EE028CFAA80002433E1 /* FeedViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModelTest.swift; sourceTree = "<group>"; };
+		00C53EE928CFAEB6002433E1 /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
 		00D686CB28CB4AD500F18EC7 /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D686CE28CB4AD500F18EC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00D686D028CB4AD500F18EC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +89,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		00C53EDB28CFAA80002433E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00D686C828CB4AD500F18EC7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -77,6 +109,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0011B73D28D3474A007DB26A /* LaunchDetail */ = {
+			isa = PBXGroup;
+			children = (
+				0011B74428D34889007DB26A /* Builder */,
+				0011B74128D34868007DB26A /* ViewModel */,
+				0011B73E28D34754007DB26A /* View */,
+			);
+			path = LaunchDetail;
+			sourceTree = "<group>";
+		};
+		0011B73E28D34754007DB26A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0011B73F28D3476E007DB26A /* LaunchDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0011B74128D34868007DB26A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0011B74228D3487A007DB26A /* LaunchDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0011B74428D34889007DB26A /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				0011B74628D3489E007DB26A /* LaunchDetailBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
 		00C53ECB28CF494D002433E1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,10 +175,38 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		00C53EDF28CFAA80002433E1 /* SpaceXTests */ = {
+			isa = PBXGroup;
+			children = (
+				00C53EE828CFAEAB002433E1 /* Mock */,
+				00C53EE728CFAA88002433E1 /* Test */,
+			);
+			path = SpaceXTests;
+			sourceTree = "<group>";
+		};
+		00C53EE728CFAA88002433E1 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				00C53EE028CFAA80002433E1 /* FeedViewModelTest.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		00C53EE828CFAEAB002433E1 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				00C53EE928CFAEB6002433E1 /* MockService.swift */,
+				0011B73B28D33E33007DB26A /* MockCoordinator.swift */,
+				0011B74828D34EC1007DB26A /* MockError.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		00D686C228CB4AD500F18EC7 = {
 			isa = PBXGroup;
 			children = (
 				00D686CD28CB4AD500F18EC7 /* SpaceX */,
+				00C53EDF28CFAA80002433E1 /* SpaceXTests */,
 				00D686CC28CB4AD500F18EC7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -121,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				00D686CB28CB4AD500F18EC7 /* SpaceX.app */,
+				00C53EDE28CFAA80002433E1 /* SpaceXTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,6 +247,7 @@
 		00D686E328CB4BF900F18EC7 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				0011B73D28D3474A007DB26A /* LaunchDetail */,
 				00EE21DD28CE5BAE00123282 /* Feed */,
 			);
 			path = Screens;
@@ -279,6 +375,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		00C53EDD28CFAA80002433E1 /* SpaceXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00C53EE428CFAA80002433E1 /* Build configuration list for PBXNativeTarget "SpaceXTests" */;
+			buildPhases = (
+				00C53EDA28CFAA80002433E1 /* Sources */,
+				00C53EDB28CFAA80002433E1 /* Frameworks */,
+				00C53EDC28CFAA80002433E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00C53EE328CFAA80002433E1 /* PBXTargetDependency */,
+			);
+			name = SpaceXTests;
+			productName = SpaceXTests;
+			productReference = 00C53EDE28CFAA80002433E1 /* SpaceXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		00D686CA28CB4AD500F18EC7 /* SpaceX */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00D686DF28CB4AD900F18EC7 /* Build configuration list for PBXNativeTarget "SpaceX" */;
@@ -312,6 +426,10 @@
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					00C53EDD28CFAA80002433E1 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 00D686CA28CB4AD500F18EC7;
+					};
 					00D686CA28CB4AD500F18EC7 = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
@@ -336,11 +454,19 @@
 			projectRoot = "";
 			targets = (
 				00D686CA28CB4AD500F18EC7 /* SpaceX */,
+				00C53EDD28CFAA80002433E1 /* SpaceXTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		00C53EDC28CFAA80002433E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00D686C928CB4AD500F18EC7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -376,11 +502,23 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		00C53EDA28CFAA80002433E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00C53EE128CFAA80002433E1 /* FeedViewModelTest.swift in Sources */,
+				00C53EEA28CFAEB6002433E1 /* MockService.swift in Sources */,
+				0011B74928D34EC1007DB26A /* MockError.swift in Sources */,
+				0011B73C28D33E34007DB26A /* MockCoordinator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00D686C728CB4AD500F18EC7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				00EE21F428CE88F200123282 /* CollectionViewCell+Extension.swift in Sources */,
+				0011B74328D3487A007DB26A /* LaunchDetailViewModel.swift in Sources */,
 				00EE21EA28CE675100123282 /* FeedListView.swift in Sources */,
 				00C53ED328CF6E87002433E1 /* AppCoordinator.swift in Sources */,
 				00C53ECE28CF4963002433E1 /* FeedCellViewModel.swift in Sources */,
@@ -390,6 +528,8 @@
 				00C53ED528CF72B2002433E1 /* FeedCollectionDataManager.swift in Sources */,
 				00C53ED728CF7817002433E1 /* UIViewController+Extension.swift in Sources */,
 				00EE21F628CE8C3B00123282 /* FeedViewBuilder.swift in Sources */,
+				0011B74728D3489E007DB26A /* LaunchDetailBuilder.swift in Sources */,
+				0011B74028D3476E007DB26A /* LaunchDetailViewController.swift in Sources */,
 				00D6870128CE195D00F18EC7 /* ApolloPublisher.swift in Sources */,
 				00EE21E328CE5F1F00123282 /* LaunchModel.swift in Sources */,
 				00D686FC28CB5F9C00F18EC7 /* API.swift in Sources */,
@@ -404,6 +544,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		00C53EE328CFAA80002433E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00D686CA28CB4AD500F18EC7 /* SpaceX */;
+			targetProxy = 00C53EE228CFAA80002433E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		00D686D928CB4AD900F18EC7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -416,6 +564,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		00C53EE528CFAA80002433E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D4T62J4499;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mct.SpaceXTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceX.app/SpaceX";
+			};
+			name = Debug;
+		};
+		00C53EE628CFAA80002433E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D4T62J4499;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mct.SpaceXTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceX.app/SpaceX";
+			};
+			name = Release;
+		};
 		00D686DD28CB4AD900F18EC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -587,6 +773,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		00C53EE428CFAA80002433E1 /* Build configuration list for PBXNativeTarget "SpaceXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00C53EE528CFAA80002433E1 /* Debug */,
+				00C53EE628CFAA80002433E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		00D686C628CB4AD500F18EC7 /* Build configuration list for PBXProject "SpaceX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
