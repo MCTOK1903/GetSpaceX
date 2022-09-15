@@ -75,8 +75,10 @@ class FeedCollectionViewCell: UICollectionViewCell {
         }
         
         launchImage.snp.makeConstraints { make in
-            make.height.width.equalTo(contentView.frame.width - 16)
-            make.top.leading.equalTo(verticalStack).offset(8)
+            make.height.equalTo(contentView.frame.height * 2/3)
+            make.width.equalTo(contentView.frame.width - 16 )
+            make.top.leading.equalTo(verticalStack).inset(8)
+            make.trailing.equalTo(verticalStack).inset(8)
         }
     }
     
